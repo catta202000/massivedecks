@@ -224,8 +224,8 @@ class Game(players: Players, config: Config, notifiers: Notifiers) (implicit con
     */
   def redraw(playerId: Player.Id): Unit = {
     val player = players.getPlayer(playerId)
-    BadRequestException.verify(player.score > 0, Errors.NotEnoughPoints())
-    players.updatePlayer(playerId, players.modifyPlayerScore(-1))
+    // BadRequestException.verify(player.score > 0, Errors.NotEnoughPoints())
+    // players.updatePlayer(playerId, players.modifyPlayerScore(-1))
     hands += (playerId -> Hand(deck.drawResponses(Hand.size)))
   }
 
